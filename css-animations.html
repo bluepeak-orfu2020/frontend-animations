@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 5rem;
+            height: 5rem;
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <p>Enkelt exempel</p>
+    <div class="box box1"></div>
+    <style>
+        @keyframes box1animation {
+            0% { transform: translateX(0); background-color: green; }
+            100% { transform: translateX(10rem); background-color: blue; }
+        }
+        .box1:hover {
+            animation-name: box1animation;
+            animation-duration: 3s;
+        }
+    </style>
+
+    <hr>
+
+    <p>Delay och timing-funktion</p>
+    <div class="box box2"></div>
+    <style>
+        @keyframes box2animation {
+            0% { transform: translateX(0); background-color: green; }
+            100% { transform: translateX(10rem); background-color: blue; }
+        }
+        .box2:hover {
+            animation-name: box2animation;
+            animation-duration: 3s;
+            animation-delay: 1s;
+            animation-timing-function: cubic-bezier(1, 0, 0, 1);
+        }
+    </style>
+
+    <hr>
+
+    <p>Kör flera gånger</p>
+    <div class="box box3"></div>
+    <style>
+        @keyframes box3animation {
+            0% { transform: translateX(0); background-color: green; }
+            100% { transform: translateX(10rem); background-color: blue; }
+        }
+        .box3:hover {
+            animation-name: box3animation;
+            animation-duration: 1s;
+            animation-iteration-count: 3;
+        }
+    </style>
+
+    <hr>
+
+    <p>Kör flera gånger med alternate</p>
+    <div class="box box4"></div>
+    <style>
+        @keyframes box4animation {
+            0% { transform: translateX(0); background-color: green; }
+            100% { transform: translateX(10rem); background-color: blue; }
+        }
+        .box4:hover {
+            animation-name: box4animation;
+            animation-duration: 1s;
+            animation-iteration-count: 2;
+            animation-direction: alternate;
+        }
+    </style>
+
+    <hr>
+    <p>Kör flera gånger med alternate</p>
+    <div class="box box5"></div>
+    <style>
+        @keyframes box5animation {
+            0% { transform: translateX(0); background-color: green; }
+            100% { transform: translateX(10rem); background-color: blue; }
+        }
+        .box5 {
+            animation-name: box5animation;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+    </style>
+
+    <hr>
+    <p>Kör flera gånger med riktning reverse</p>
+    <div class="box box6"></div>
+    <style>
+        @keyframes box6animation {
+            0% { transform: translateX(0); background-color: green; }
+            100% { transform: translateX(10rem); background-color: blue; }
+        }
+        .box6:hover {
+            animation-name: box6animation;
+            animation-duration: 3s;
+            animation-direction: reverse;
+        }
+    </style>
+
+    <hr>
+
+    <p>Fill mode</p>
+    <div class="box box7"></div>
+    <style>
+        @keyframes box7animation {
+            0% { transform: translateX(0); background-color: green; }
+            100% { transform: translateX(10rem); background-color: blue; }
+        }
+        .box7 {
+            animation-fill-mode: forwards;
+        }
+        .box7:hover {
+            animation-name: box7animation;
+            animation-duration: 3s;
+        }
+    </style>
+
+    <hr>
+    
+    <p>Play state</p>
+    <div class="box box8"></div>
+    <style>
+        @keyframes box8animation {
+            0% { transform: translateX(0); background-color: green; }
+            100% { transform: translateX(10rem); background-color: blue; }
+        }
+        .box8 {
+            animation-name: box8animation;
+            animation-duration: 3s;
+            animation-play-state: paused;
+        }
+        .box8:hover {
+            animation-play-state: running;
+        }
+    </style>
+
+    <hr>
+    
+</body>
+</html>
