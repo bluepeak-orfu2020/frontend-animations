@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 5rem;
+            height: 5rem;
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <p>Enkelt exempel</p>
+    <div class="box box1"></div>
+    <style>
+        .box1 {
+            transition-property: width;
+            transition-duration: 3s; /* 3000ms */
+        }
+        .box1:hover {
+            width: 10rem;
+        }
+    </style>
+
+    <hr>
+    
+    <p>Exempel med timing-funktion</p>
+    <div class="box box2"></div>
+    <style>
+        .box2 {
+            transition-property: width;
+            transition-duration: 3s;
+            transition-timing-function: linear;
+        }
+        .box2:hover {
+            width: 10rem;
+        }
+    </style>
+
+    <hr>
+    
+    <p>Exempel med custom timing-funktion</p>
+    <div class="box box3"></div>
+    <style>
+        .box3 {
+            transition-property: width;
+            transition-duration: 3s;
+            transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+        }
+        .box3:hover {
+            width: 10rem;
+        }
+    </style>
+
+    <hr>
+    
+    <p>Exempel med fördröjning</p>
+    <div class="box box4"></div>
+    <style>
+        .box4 {
+            transition-property: width;
+            transition-duration: 3s;
+            transition-delay: 100ms;
+        }
+        .box4:hover {
+            width: 10rem;
+        }
+    </style>
+
+    <hr>
+    
+    <p>Exempel med fördröjning och flera animerade egenskaper</p>
+    <div class="box box5"></div>
+    <style>
+        .box5 {
+            transition-property: width, height;
+            transition-duration: 3s, 1s;
+            transition-delay: 0s, 3s;
+        }
+        .box5:hover {
+            width: 10rem;
+            height: 10rem;
+        }
+    </style>
+
+    <hr>
+    <p>Kortform av samma övergång som föregående exempel</p>
+    <div class="box box6"></div>
+    <style>
+        .box6 {
+            transition: width 3s 0s, height 1s 3s;
+        }
+        .box6:hover {
+            width: 10rem;
+            height: 10rem;
+        }
+    </style>
+
+    <hr>
+    <p>Tänk på var elementet är när du kör :hover</p>
+    <p>En transition behöver ett explicit startvärde för att kunna animera</p>
+    <div class="box7">
+        <div class="box"></div>
+    </div>
+    <style>
+        .box7 {
+            outline: 1px solid green;
+            display: inline-block;
+        }
+        .box7 > .box {
+            position: relative;
+            transition: left 400ms;
+            /* left: 0; */ /* måste ange ett värde på left för att få animation */
+        }
+        .box7:hover > .box {
+            left: 10rem;
+        }
+    </style>
+
+    <hr>
+    <p>Värde från JavaScript</p>
+    <div class="box box8"></div>
+    <style>
+        .box8 {
+            outline: 1px solid green;
+            display: inline-block;
+            position: relative;
+            transition: left 400ms;
+        }
+    </style>
+    <script>
+        const box8 = document.querySelector('.box8');
+        box8.style.left = '0px';
+        setTimeout(() => {
+            box8.style.left = '10rem';
+        }, 0);
+    </script>
+
+    <hr>
+    <p>Animera "alla"</p>
+    <div class="box box9"></div>
+    <style>
+        .box9 {
+            transition-property: all;
+            transition-duration: 3s;
+            opacity: 1;
+        }
+        .box9:hover {
+            width: 10rem;
+            height: 10rem;
+            background-color: chartreuse;
+            opacity: 0.5;
+        }
+    </style>
+
+    <hr>
+    <p>Prestanda</p>
+    <div class="prestanda">
+        <span class="box box10"></span>
+        <p>Muffin cookie jelly beans lollipop tiramisu tart. Soufflé brownie cookie chocolate cake chocolate bar jelly muffin toffee chocolate cake. Jujubes dessert bonbon tiramisu. Muffin jelly marzipan jujubes wafer halvah. Sweet chocolate cake wafer. Biscuit pastry dessert biscuit sweet roll. Oat cake toffee gummi bears soufflé pudding. Caramels sweet roll pastry cake chocolate bar muffin lollipop.</p>
+    </div>
+    <style>
+        .prestanda > p {
+            display: inline;
+        }
+        .box10 {
+            display: inline-block;
+            transition: width 2s;
+        }
+        .box10:hover {
+            width: 10rem;
+        }
+    </style>
+</body>
+</html>
