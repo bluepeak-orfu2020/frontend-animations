@@ -146,6 +146,47 @@
     </style>
 
     <hr>
+
+    <p>Flera steg i animation</p>
+    <div class="box box9"></div>
+    <style>
+        @keyframes box9animation {
+            0% { transform: translateX(0) translateY(0); }
+            50% { transform: translateX(5rem) translateY(5rem); }
+            100% { transform: translateX(10rem) translateY(0); }
+        }
+        .box9 {
+            margin-bottom: 6rem;
+        }
+        .box9:hover {
+            animation-name: box9animation;
+            animation-duration: 3s;
+            
+        }
+    </style>
+
+    <hr>
+
+    <p>Flera animationer</p>
+    <div class="box box10"></div>
+    <style>
+        @keyframes box10Aanimation {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(10rem); }
+        }
+        @keyframes box10Banimation {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .box10 {
+            margin-bottom: 6rem;
+        }
+        .box10:hover {
+            animation: box10Aanimation 5s, box10Banimation 1s infinite alternate;
+        }
+    </style>
+
+    <hr>
     
 </body>
 </html>
