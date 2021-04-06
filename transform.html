@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 5rem;
+            height: 5rem;
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <p>Translate</p>
+    <div class="box box1"></div>
+    Croissant apple pie macaroon danish candy. Apple pie apple pie apple pie sugar plum gummies biscuit gummies. Candy canes wafer brownie cake gummies chocolate bar dragée. Gummi bears donut gummies muffin apple pie cake sweet roll muffin. Tootsie roll powder lemon drops jelly beans.
+    <style>
+        .box1 {
+            display: inline-block;
+            transform: translate(10rem, 1rem);
+        }
+    </style>
+
+    <hr>
+    
+    <p>Rotate</p>
+    <div class="box box2"></div>
+    Croissant apple pie macaroon danish candy. Apple pie apple pie apple pie sugar plum gummies biscuit gummies. Candy canes wafer brownie cake gummies chocolate bar dragée. Gummi bears donut gummies muffin apple pie cake sweet roll muffin. Tootsie roll powder lemon drops jelly beans.
+    <style>
+        .box2 {
+            display: inline-block;
+            transform: rotate(10deg);
+            transform: rotate(0.3turn);
+        }
+    </style>
+
+    <hr>
+
+    <p>Rotate with animation</p>
+    <div class="box box3"></div>
+    <style>
+        .box3 {
+            transform: rotate(0);
+            transition-property: transform;
+            transition-duration: 3s;
+            height: 2rem;
+        }
+        .box3:hover {
+            transform: rotate(-45deg);
+            transform: rotate(315deg);
+        }
+    </style>
+
+    <hr>
+
+    <p>Scale</p>
+    <div class="box box4"></div>
+    Croissant apple pie macaroon danish candy. Apple pie apple pie apple pie sugar plum gummies biscuit gummies. Candy canes wafer brownie cake gummies chocolate bar dragée. Gummi bears donut gummies muffin apple pie cake sweet roll muffin. Tootsie roll powder lemon drops jelly beans.
+    <style>
+        .box4 {
+            display: inline-block;
+            transform: scale(2, 1.2);
+        }
+    </style>
+
+    <hr>
+
+    <p>Rotate med transform-origin</p>
+    <div class="box box5"></div>
+    <style>
+        .box5 {
+            transform: rotate(45deg);
+            transform-origin: bottom right;
+            height: 2rem;
+        }
+    </style>
+
+    <hr>
+    
+    <p>Scale med transform-origin</p>
+    <div class="box6">
+        <div class="box b1"></div>
+        <div class="box b2"></div>
+    </div>
+    <style>
+        .box6 {
+            margin-bottom: 3rem;
+        }
+        .box6 > .box {
+            margin: 2rem;
+            display: inline-block;
+            transform: scale(1);
+            transition: transform 2s;
+        }
+        .box6:hover > .box {
+            transform: scale(1.5);
+        }
+        .box6 > .b1 {
+            transform-origin: top left;
+        }
+        .box6 > .b2 {
+            transform-origin: center;
+        }
+    </style>
+
+    <hr>
+
+    <p>Flera transformationsfunktioner</p>
+    <div class="box box7"></div>
+    <style>
+        .box7 {
+            /* ordningen spelar roll */
+            transform: rotate(45deg) translate(5rem, 0);
+            transform: translate(5rem, 0) rotate(45deg);
+        }
+    </style>
+
+    <hr>
+</body>
+</html>
