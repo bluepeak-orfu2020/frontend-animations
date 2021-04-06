@@ -175,5 +175,46 @@
             width: 10rem;
         }
     </style>
+
+    <hr>
+    <p>Prestanda med transform</p>
+    <div class="prestanda">
+        <span class="box box11 width"></span>
+        <p>Muffin cookie jelly beans lollipop tiramisu tart. Soufflé brownie cookie chocolate cake chocolate bar jelly muffin toffee chocolate cake. Jujubes dessert bonbon tiramisu. Muffin jelly marzipan jujubes wafer halvah. Sweet chocolate cake wafer. Biscuit pastry dessert biscuit sweet roll. Oat cake toffee gummi bears soufflé pudding. Caramels sweet roll pastry cake chocolate bar muffin lollipop.</p>
+        <br>
+        <br>
+        <br>
+        <span class="box11-container transform">
+            <span class="box box11"></span>
+        </span>
+        <p>Muffin cookie jelly beans lollipop tiramisu tart. Soufflé brownie cookie chocolate cake chocolate bar jelly muffin toffee chocolate cake. Jujubes dessert bonbon tiramisu. Muffin jelly marzipan jujubes wafer halvah. Sweet chocolate cake wafer. Biscuit pastry dessert biscuit sweet roll. Oat cake toffee gummi bears soufflé pudding. Caramels sweet roll pastry cake chocolate bar muffin lollipop.</p>
+    </div>
+    <style>
+        .prestanda > p {
+            display: inline;
+        }
+        .box11 {
+            display: inline-block;
+            transition: width 2s;
+            transform: scaleX(1);
+            transform-origin: left center;
+        }
+        .box11.width:hover {
+            width: 10rem;
+        }
+        .box11-container {
+            transition: none;
+            display: inline-block;
+        }
+        .box11-container > .box {
+            transition: transform 2s;
+        }
+        .box11-container:hover {
+            width: 10rem;
+        }
+        .box11-container:hover > .box {
+            transform: scaleX(2);
+        }
+    </style>
 </body>
 </html>
