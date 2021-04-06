@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 5rem;
+            height: 5rem;
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <p>Enkelt exempel</p>
+    <div class="box box1"></div>
+    <button class="box1Button">Go!</button>
+    <script>
+        const box1 = document.querySelector('.box1');
+        const box1Button = document.querySelector('.box1Button');
+        
+        box1Button.addEventListener('click', () => {
+            const keyframes = [
+                { transform: 'translateX(0)' },
+                { transform: 'translateX(10rem)' }
+            ];
+            const animationObject = box1.animate(keyframes, 3000);
+
+            console.log('animationObject', animationObject);
+        });
+    </script>
+
+    <hr>
+
+    <p>Exempel med paus</p>
+    <div class="box box2"></div>
+    <button class="box2Button">Go!</button>
+    <button class="box2Pause">Paus!</button>
+    <script>
+        (() => {
+            const box = document.querySelector('.box2');
+            const boxButton = document.querySelector('.box2Button');
+            const pauseButton = document.querySelector('.box2Pause');
+            
+            let animation;
+            boxButton.addEventListener('click', () => {
+                const keyframes = [
+                    { transform: 'translateX(0)' },
+                    { transform: 'translateX(10rem)' }
+                ];
+                animation = box.animate(keyframes, 10000);
+            });
+            pauseButton.addEventListener('click', () => {
+                if (animation.playState === 'running') {
+                    animation.pause();
+                } else {
+                    animation.play();
+                }
+            });
+
+        })();
+    </script>
+
+    <hr>
+
+    <p>Exempel med events</p>
+    <div class="box box3"></div>
+    <button class="box3Button">Go!</button>
+    <button class="box3Cancel">Avbryt!</button>
+    <script>
+        (() => {
+            const box = document.querySelector('.box3');
+            const boxButton = document.querySelector('.box3Button');
+            const cancelButton = document.querySelector('.box3Cancel');
+            
+            let animation;
+            boxButton.addEventListener('click', () => {
+                const keyframes = [
+                    { transform: 'translateX(0)' },
+                    { transform: 'translateX(10rem)' }
+                ];
+                animation = box.animate(keyframes, 5000);
+
+                animation.onfinish = () => {
+                    console.log('im done!');
+                }
+                animation.oncancel = () => {
+                    console.log('im cancelled');
+                }
+            });
+            cancelButton.addEventListener('click', () => {
+                animation.cancel();
+            });
+
+        })();
+    </script>
+
+    <hr>
+
+    <p>Exempel med options</p>
+    <div class="box box4"></div>
+    <button class="box4Button">Go!</button>
+    <script>
+        (() => {
+            const box = document.querySelector('.box4');
+            const boxButton = document.querySelector('.box4Button');
+            
+            let animation;
+            boxButton.addEventListener('click', () => {
+                const keyframes = [
+                    { transform: 'translateX(0)' },
+                    { transform: 'translateX(10rem)' }
+                ];
+                animation = box.animate(keyframes, {
+                    duration: 1000,
+                    iterations: Infinity,
+                    direction: 'alternate'
+                });
+            });
+        })();
+    </script>
+
+    <hr>
+
+    <p>transition med</p>
+    <div class="box box4"></div>
+    <button class="box4Button">Go!</button>
+    <script>
+        (() => {
+            const box = document.querySelector('.box4');
+            const boxButton = document.querySelector('.box4Button');
+            
+            let animation;
+            boxButton.addEventListener('click', () => {
+                const keyframes = [
+                    { transform: 'translateX(0)' },
+                    { transform: 'translateX(10rem)' }
+                ];
+                animation = box.animate(keyframes, {
+                    duration: 1000,
+                    iterations: Infinity,
+                    direction: 'alternate'
+                });
+            });
+        })();
+    </script>
+    
+</body>
+</html>
