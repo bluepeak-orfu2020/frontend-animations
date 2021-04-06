@@ -216,5 +216,42 @@
             transform: scaleX(2);
         }
     </style>
+
+    <hr>
+
+    <p>Exempel med JS events</p>
+    <div class="box boxJS"></div>
+    <style>
+        .boxJS {
+            transition: width 1s;
+        }
+        .boxJS:hover {
+            width: 10rem;
+        }
+    </style>
+    <script>
+        (() => {
+            const box = document.querySelector('.boxJS');
+            
+            box.addEventListener('transitionend', () => {
+                console.log('transition done!');
+            });
+        })();
+    </script>
+
+    <hr>
+
+    <p>Enkelt med steps() timing-funktion</p>
+    <div class="box box12"></div>
+    <style>
+        .box12 {
+            transition-property: width;
+            transition-duration: 3s;
+            transition-timing-function: steps(4, jump-none);
+        }
+        .box12:hover {
+            width: 10rem;
+        }
+    </style>
 </body>
 </html>

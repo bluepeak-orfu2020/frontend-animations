@@ -187,6 +187,27 @@
     </style>
 
     <hr>
+
+    <p>Exempel med JS events</p>
+    <div class="box boxJS"></div>
+    <style>
+        @keyframes boxJSAanimation {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(10rem); }
+        }
+        .boxJS:hover {
+            animation: boxJSAanimation 1s;
+        }
+    </style>
+    <script>
+        (() => {
+            const box = document.querySelector('.boxJS');
+            
+            box.addEventListener('animationend', () => {
+                console.log('animation done!');
+            });
+        })();
+    </script>
     
 </body>
 </html>
